@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShopNow — Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="icon" href="logo.svg">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="logo.svg" alt="ShopNow logo" class="logo" />
+      <span class="site-title">ShopNow</span>
+    </div>
+
+    <div class="nav-actions">
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <button class="btn-link" id="open-login">Login</button>
+        <button class="btn-outline" id="open-signup">Sign up</button>
+      </nav>
+
+      <div class="search-cart">
+        <input id="search-input" type="search" placeholder="Search products, brands..." aria-label="Search"/>
+        <select id="category-select" aria-label="Filter by category">
+          <option value="all">All categories</option>
+        </select>
+        <select id="sort-select" aria-label="Sort products">
+          <option value="recom">Recommended</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+        </select>
+
+        <div class="cart-wrapper">
+          <button id="cart-toggle" class="cart-btn" aria-haspopup="dialog" aria-expanded="false">
+            🛒 <span id="cart-count">0</span>
+          </button>
+          <div id="mini-cart" class="mini-cart" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Find what you love — fast.</h1>
+        <p>Handpicked tech, home & lifestyle products with great deals and fast delivery.</p>
+      </div>
+      <img class="hero-image" src="hero.jpg" alt="" />
+    </section>
+
+    <section class="controls-bar">
+      <div class="tag-list" id="category-tags"></div>
+      <div class="summary" id="results-summary"></div>
+    </section>
+
+    <section id="product-grid" class="product-grid" aria-live="polite">
+      <!-- Products inserted by JS -->
+    </section>
+  </main>
+
+  <footer id="about" class="site-footer">
+    <div>
+      <h3>About ShopNow</h3>
+      <p>Demo e-commerce front-end — no backend required. Built with HTML/CSS/JS and localStorage persistence.</p>
+    </div>
+    <small>© 2025 ShopNow</small>
+  </footer>
+
+  <!-- Product card template (hidden) for reference -->
+  <template id="product-card-template">
+    <article class="product-card">
+      <img alt="product image" />
+      <div class="card-body">
+        <h3 class="product-name"></h3>
+        <p class="product-desc"></p>
+        <div class="card-foot">
+          <div class="price"></div>
+          <div class="actions">
+            <button class="btn add-cart">Add</button>
+            <a class="btn-link details">Details →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <!-- Login / Signup modals (front-end only) -->
+  <div id="modal-backdrop" class="modal-backdrop" hidden></div>
+
+  <dialog id="auth-dialog" class="auth-dialog">
+    <form method="dialog" id="auth-form">
+      <h3 id="auth-title">Login</h3>
+      <label>
+        Email
+        <input type="email" id="auth-email" required />
+      </label>
+      <label>
+        Password
+        <input type="password" id="auth-password" required minlength="4" />
+      </label>
+      <menu class="dialog-actions">
+        <button id="cancel-auth" type="reset">Cancel</button>
+        <button id="submit-auth" type="submit">Continue</button>
+      </menu>
+    </form>
+  </dialog>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShopNow — Product</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="icon" href="logo.svg">
+</head>
+<body>
+  <header class="site-header product-header">
+    <div class="brand">
+      <img src="logo.svg" alt="ShopNow logo" class="logo" />
+      <a href="index.html" class="site-title">ShopNow</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-cart">
+        <input id="search-input" type="search" placeholder="Search products..." />
+        <div class="cart-wrapper">
+          <button id="cart-toggle" class="cart-btn">🛒 <span id="cart-count">0</span></button>
+          <div id="mini-cart" class="mini-cart"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="product-detail" class="product-detail container">
+    <!-- Populated by script.js -->
+  </main>
+
+  <footer class="site-footer">
+    <small>© 2025 ShopNow</small>
+  </footer>
+</body>
+</html>
